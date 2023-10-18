@@ -82,6 +82,7 @@ import hudson.views.ViewsTabBar;
 import java.io.File;
 import java.io.FileFilter;
 import java.io.IOException;
+import java.security.SecureRandom;
 import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -150,7 +151,7 @@ public abstract class AbstractFolder<I extends TopLevelItem> extends AbstractIte
      * Our logger.
      */
     private static final Logger LOGGER = Logger.getLogger(AbstractFolder.class.getName());
-    private static final Random ENTROPY = new Random();
+    private static final Random ENTROPY = new SecureRandom();
     private static final int HEALTH_REPORT_CACHE_REFRESH_MIN = Math.max(10, Math.min(1440, Integer.getInteger(
             AbstractFolder.class.getName()+".healthReportCacheRefreshMin", 60
     )));
